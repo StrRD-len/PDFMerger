@@ -1,4 +1,16 @@
-                    GNU AFFERO GENERAL PUBLIC LICENSE
+Inhaltsübersicht:
+I.   Lizenz für PDFMerger
+II.  HINWEISE ZU DRITTANBIETER-LIZENZEN
+  II.a.  PySide6
+  II.b.  pyMuPDF
+
+Einleitende Bemerkungen:
+PDFMerger wird unter einer GNU Affero General Public License v3 veröffentlicht, um sicherzugehen, dass die Lizenzanforderungen von pyMuPDF für diese open-source-Veröffentlichung auf jeden Fall eingehalten wird.
+
+
+I. Lizenz für PDFMerger
+
+                   GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
@@ -659,3 +671,41 @@ specific requirements.
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
+
+
+
+II. HINWEISE ZU DRITTANBIETER-LIZENZEN
+
+Dieses Projekt verwendet Software von Drittanbietern, die unter den folgenden Lizenzen stehen:
+
+II.a. PySide6
+
+PySide6 ist eine Python-Bindung für das Qt-Framework.
+PySide6 ist unter der **GNU Lesser General Public License (LGPL) v3** lizenziert.
+
+Eine Kopie der LGPLv3 finden Sie unter:
+[https://www.gnu.org/licenses/lgpl-3.0.en.html](https://www.gnu.org/licenses/lgpl-3.0.en.html)
+
+Für weitere Details zur Qt-Lizenzierung besuchen Sie bitte:
+[https://www.qt.io/licensing/lgpl-license](https://www.qt.io/licensing/lgpl-license)
+
+Copyright (c) The Qt Company Ltd. und andere Mitwirkende.
+
+II.b PyMuPDF (fitz)
+
+PyMuPDF (fitz) ist ein Python-Binding für MuPDF.
+PyMuPDF selbst ist unter der **GNU General Public License (GPL) v3** lizenziert.
+MuPDF, die zugrunde liegende Bibliothek, ist unter der **GNU Affero General Public License (AGPL) v3** lizenziert.
+
+Eine Kopie der GPLv3 finden Sie unter:
+[https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+Eine Kopie der AGPLv3 finden Sie unter:
+[https://www.gnu.org/licenses/agpl-3.0.en.html](https://www.gnu.org/licenses/agpl-3.0.en.html)
+
+Weitere Informationen zu PyMuPDF und dessen Lizenzierung:
+[https://pymupdf.readthedocs.io/en/latest/license.html](https://pymupdf.readthedocs.io/en/latest/license.html)
+
+Copyright (c) 2017-2024, Artifex Software, Inc. und PyMuPDF-Mitwirkende.
+
+
