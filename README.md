@@ -68,7 +68,8 @@ Dieses Projekt steht unter der AGPLv3-Lizenz. Weitere Details finden Sie in der 
 
 VII. Mitwirkende
 
-* StrRD-len - Erstautor
+* StrRD-len
+* Gemini 2.5
 
 VIII. Kontakt
 
