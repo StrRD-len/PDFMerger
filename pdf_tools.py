@@ -29,4 +29,3 @@ def merge_pdfs(pdf_paths, output_path):
         return True, f"Zusammengeführt: {output_path}"
     except Exception as e:
         return False, str(e)
-
