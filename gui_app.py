@@ -40,21 +40,30 @@ class PDFListWidget(QListWidget):
         self.setSelectionMode(QAbstractItemView.ExtendedSelection)
 
     def dragEnterEvent(self, event: QDragEnterEvent):
-        if event.mimeData().hasUrls():
+        if event.mimeData().hasUrls() or event.source() == self:
             event.acceptProposedAction()
+        else:
+            super().dragEnterEvent(event)
 
     def dragMoveEvent(self, event: QDragEnterEvent):
-        event.acceptProposedAction()
+        if event.mimeData().hasUrls() or event.source() == self:
+            event.acceptProposedAction()
+        else:
+            super().dragMoveEvent(event)
 
     def dropEvent(self, event: QDropEvent):
         if event.source() == self:
+            # Wenn der Drop von innerhalb des Widgets kommt, nutzen wir die Standard-Drop-Logik
             super().dropEvent(event)
         elif event.mimeData().hasUrls():
+            # Wenn der Drop von externen Dateien kommt
             for url in event.mimeData().urls():
                 file_path = url.toLocalFile()
                 if file_path.lower().endswith(".pdf"):
                     self.add_pdf_item(file_path)
             event.acceptProposedAction()
+        else:
+            super().dropEvent(event)
 
     def add_pdf_item(self, file_path):
         item = QListWidgetItem(os.path.basename(file_path))
@@ -62,7 +71,8 @@ class PDFListWidget(QListWidget):
         self.addItem(item)
 
     def get_selected_files_in_order(self):
-        return [item.data(Qt.UserRole) for item in self.selectedItems()]
+        # Gibt alle Elemente in der aktuell angezeigten Reihenfolge zurück.
+        return [self.item(i).data(Qt.UserRole) for i in range(self.count())]
 
     def remove_selected_items(self):
         for item in self.selectedItems():
@@ -71,7 +81,7 @@ class PDFListWidget(QListWidget):
 class PDFToolApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("PDFMerger") 
+        self.setWindowTitle("PDFMerger")
         self.setup_ui()
 
     def setup_ui(self):
@@ -114,7 +124,7 @@ class PDFToolApp(QWidget):
         footer_layout = QHBoxLayout()
         footer_layout.addItem(QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum))
         footer_label = QLabel("Lizenz-Informationen:", self)
-        link_url = "https://github.com/StrRD-len/PDFMerger/blob/main/LICENSE" #github License 
+        link_url = "https://github.com/StrRD-len/PDFMerger/blob/main/LICENSE"
         link_text = "Lizenz-Informationen"
         link_color = "gray"
         footer_label.setText(f'<a href="{link_url}" style="color: {link_color};">{link_text}</a>')
